@@ -9,27 +9,23 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script defer src="app.js" type="module"></script>
+    <script defer src="post.js" type="module"></script>
 </head>
 
 <body>
     <header class="logo">Stranger's Things</header>
+    <div id="options">
+        <button class="post_cards">Posts</button>
+        <button class="messages">Messages</button>
+        <button class="post_create">Create Post</button>
+    </div>
+    <div id="new_tab"></div>
     <div class="search">
         <input class="search-bar" type="text" placeholder="Search...">
         <button class="search-button" type="submit">Search</button>
     </div>
-    <div class="all-posts">
-        <div class="old-post">
-            <span>old post</span>
-        </div>
-        <div class="new-post">
-            <span>new post</span>
-        </div>
-    </div>
-    <div class="login-bar">
-        <button class="login">Login</button>
-        <button class="logout">Logout</button>
-        <button class="site-nav">Site Nav</button>
-    </div>
+    <div class="all-posts"></div>
+    <div class="login-bar"></div>
 </body>
 
 </html>
