@@ -42,19 +42,19 @@
   width: 10%;
 }
 .all-posts {
-  grid-row: 3;
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 50rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
-.old-post {
-  padding: 3rem;
-  grid-column: 1;
+.post{
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem;
 }
-
-.new-post {
-  padding: 3rem;
-  grid-column: 2;
+.post .title {
+  font-size: 20px;
 }
 
 .login-bar {
@@ -125,4 +125,53 @@
   padding: 0.5rem;
   margin: 0.5rem;
   background-color: #536b60;
+}
+
+.new-messages {
+  background-color: rgb(210, 213, 216);
+  padding: 0.5rem;
+}
+
+.new-messages .title {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+.new-messages .message {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+
+.new-messages button {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+
+.new-post {
+  background-color: lightsteelblue;
+  padding: 0.5rem;
+}
+
+.new-post-title {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+.new-post-description {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+.new-post-price {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+.new-post-location {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+.new-post-will_deliver {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+.new-post-button {
+  margin: 0.5rem;
+  padding: 0.3rem;
 }
