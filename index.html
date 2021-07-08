@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stranger's Things</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script defer src="app.js" type="module"></script>
-    <script defer src="./posts/post.js" type="module"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger's Things</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script defer src="app.js" type="module"></script>
+  <script defer src="post.js" type="module"></script>
 </head>
 
-<body>
+<!-- <body>
     <header class="logo">Stranger's Things</header>
     <div id="options">
         <button class="post_cards">Posts</button>
@@ -27,6 +27,38 @@
     </div>
     <div class="all-posts"></div>
     <div class="login-bar"></div>
+</body> -->
+
+<body>
+  <header class="logo">Stranger's Things</header>
 </body>
+<div class="user-status">
+  <button class="login-visible">LOG IN</button>
+  <button class="logout">LOG OUT</button>
+  <button class="register">REGISTER</button>
+  <button class="myMessages">MESSAGES</button>
+  <button class="myPosts">POSTS</button>
+</div>
+
+<section class="message-container">
+  <div class="messages-holder">
+    <h3 class="messagesHeader">Inbox messages</h3>
+  </div>
+</section>
+
+<main class="full-width">
+  <section class="post-holder" id="all-posts">
+    <div class="post-container"></div>
+    <div class="search-bar">
+      <form action="" id="search-bar">
+      <label for="post-search" id="search-label">KEYWORD:</label>
+      <input type="search" id="post-search" name="PS" />
+      <button type="submit" id="search-button">SEARCH</button>
+    </form>
+    </div>
+  </section>
+</main>
+
+
 
 </html>
