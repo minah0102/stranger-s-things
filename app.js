@@ -1,5 +1,5 @@
-import { renderAuthForm } from "./auth/auth.js";
-import { fetchPosts, renderPosts, createNewPost, deletePost } from "./posts/post.js";
+import { renderAuthForm } from "./auth.js";
+import { fetchPosts, renderPosts, createNewPost, deletePost } from "./post.js";
 
 let allPosts = $(".all-posts");
 
