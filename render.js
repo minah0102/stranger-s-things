@@ -35,9 +35,9 @@ export function createElementMessage(message) {
   const { fromUser, post, content } = message;
   return $(`
   <div class="message-tab">
-    <p><b>From:</b> ${fromUser.username}</p>
-    <p><b>Regarding:</b> ${post.title}</p>
-    <p><b>Content:</b> ${content}</p>
+    <p><b>From: </b> ${fromUser.username}</p>
+    <p><b>Regarding: </b> ${post.title}</p>
+    <p><b>Message: </b> ${content}</p>
     `).data("message", message);
 }
 
