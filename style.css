@@ -494,13 +494,7 @@ input {
   height: 100vh;
 }
 
-@media screen and (max-width: 900px) {
-  .post-form {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   .post-form {
     display: none;
   }
