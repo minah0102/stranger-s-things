@@ -9,30 +9,12 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script defer src="app.js" type="module"></script>
-  <script defer src="post.js" type="module"></script>
 </head>
-
-<!-- <body>
-    <header class="logo">Stranger's Things</header>
-    <div id="options">
-        <button class="post_cards">Posts</button>
-        <button class="messages">Messages</button>
-        <button class="post_create">Create Post</button>
-    </div>
-    <div id="new_tab">
-    </div>
-    <div class="search">
-        <input class="search-bar" type="text" placeholder="Search...">
-        <button class="search-button" type="submit">Search</button>
-    </div>
-    <div class="all-posts"></div>
-    <div class="login-bar"></div>
-</body> -->
 
 <body>
   <header class="logo">Stranger's Things</header>
   <div class="user-status">
-    <button class="login-visible">LOG IN</button>
+    <button class="login visible">LOG IN</button>
     <button class="logout">LOG OUT</button>
     <button class="register">REGISTER</button>
     <button class="myMessages">MESSAGES</button>
@@ -48,41 +30,41 @@
   <main class="full-width">
     <section class="post-holder" id="all-posts">
       <div class="post-container"></div>
-      <div class="search-bar">
-        <form action="" id="search-bar">
-          <label for="post-search" id="search-label">KEYWORD:</label>
-          <input type="search" id="post-search" name="PS" />
-          <button type="submit" id="search-button">SEARCH</button>
-        </form>
-      </div>
+        <div class="search-bar">
+          <form action="" id="search-bar">
+            <label for="post-search" id="search-label"></label>
+            <input type="search" id="post-search" name="PS" placeholder="Enter Keyword" />
+            <button type="submit" id="search-button">SEARCH</button>
+          </form>
+        </div>
     </section>
   </main>
 
   <div class="modal">
     <div class="content">
-      <h2>New User</h2>
+      <h3>New User</h3>
       <form class="register-user" id="register-user" action="" method="">
-        <label for="user-name">NAME</label>
+        <label for="user-name">USERNAME</label>
         <input type="text" id="user-name" placeholder="username" required />
-        <h5>This is a required field.</h5>
+        <p>This is a required field.</p>
 
         <label for="user-password">PASSWORD</label>
         <input type="password" id="user-password" placeholder="password" required />
-        <h5>This is a required field</h5>
+        <p>This is a required field.</p>
 
         <label for="user-password-confirm">CONFIRM PASSWORD</label>
         <input type="password" id="user-password-confirm" message="" placeholder="confirm password" required />
         <span id='message'></span>
-        <h5>This is a required field</h5>
+        <p>This is a required field.</p>
 
         <div class="actions">
-          <button type="submit" class="action-create-user-when-valid" disabled="true">
-            <i class="material-icons">add_circle</i>
+          <button type="submit" class="action create-user when-valid" disabled="true">
+            <i class="material-icons"></i>
             <span type="submit" class="action-text" id="createUser">Create</span>
           </button>
 
           <button class="action cancel-create-user">
-            <i class="material-icons">cancel</i>
+            <i class="material-icons"></i>
             <span class="action-text">Cancel</span>
           </button>
         </div>
@@ -94,21 +76,21 @@
     <div class="contentLogin">
       <h3>User</h3>
       <form class="login-user" id="login-user" action="" method="">
-        <label for="login-name">Name</label>
+        <label for="login-name">USERNAME</label>
         <input type="text" id="login-name" placeholder="name" required />
-        <h5>This is a required field</h5>
+        <p>This is a required field.</p>
 
-        <label for="login-password">Password</label>
+        <label for="login-password">PASSWORD</label>
         <input type="password" id="login-password" placeholder="password" required />
-        <h5>This is a required field</h5>
+        <p>This is a required field.</p>
 
         <div class="actions">
-          <button type="submit" class="action-login-user-when-valid">
-            <i class="material-icons">add_circle</i>
+          <button type="submit" class="action login-user when-valid">
+            <i class="material-icons"></i>
             <span type="submit" class="action-text">Log in</span>
           </button>
           <button class="action cancel-login">
-            <i class="material-icons">cancel</i>
+            <i class="material-icons"></i>
             <span class="action-text">Exit</span>
           </button>
         </div>
@@ -116,27 +98,30 @@
     </div>
   </div>
 
-  <aside class="make-post" id="aside-section">
-    <form class="post-form" action="" method="">
-      <h3 class="make-post-head">List Items For Sale</h3>
+  <div class="postModal">
+    <aside class="make-post" id="aside-section">
+      <form class="post-form" action="" method="">
+        <h3 class="make-post-head">List Items For Sale</h3>
 
-      <label for="post-title">Title: </label>
-      <input type="text" id="post-title" name="title" placeholder="Enter Title" required />
+        <label for="post-title">Title: </label>
+        <input type="text" id="post-title" name="title" placeholder="Enter Title" required />
 
-      <label for="post-body">Description: </label>
-      <textarea type="text" id="post-body" name="post" placeholder="Description" required></textarea>
+        <label for="post-body">Description: </label>
+        <textarea type="text" id="post-body" name="post" placeholder="Description" required></textarea>
 
-      <label for="post-price">Price: </label>
-      <input type="text" id="post-price" name="price" placeholder="Price" required />
+        <label for="post-price">Price: </label>
+        <input type="text" id="post-price" name="price" placeholder="Price" required />
 
-      <label for="post-location">Location: </label>
-      <input type="text" id="post-location" name="location" />
+        <label for="post-location">Location: </label>
+        <input type="text" id="post-location" name="location" />
 
-      <label for="willDeliver">Will deliver<input type="checkbox" id="willDeliver" name="willDeliver" value=""></label>
+        <label for="willDeliver">Will deliver<input type="checkbox" id="willDeliver" name="willDeliver"
+            value=""></label>
 
-      <input id="submit-post" type="submit" value="post/edit" />
-    </form>
-  </aside>
+        <input id="submit-post" type="submit" value="Post/Edit" />
+      </form>
+    </aside>
+  </div>
 </body>
 
 </html>

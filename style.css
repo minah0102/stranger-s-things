@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mukta&display=swap");
 
 * {
-  border: 0;
+  border: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,169 +9,499 @@
   font-size: 16px;
 }
 
-.body {
+body {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 70px 50px 1fr;
+  height: 100vh;
+  position: relative;
+}
+.two-third-width {
+  display: grid;
+  grid-column: 1/3;
 }
 
-.logo {
-  grid-row: 1;
-  padding: 2rem;
+header {
+  padding: 1rem;
   text-align: center;
-  background-color: #9cd3b9;
+  grid-column: 1/ -1;
+  grid-row: 1;
+  background-color: #90b3b6;
   font-size: 30px;
 }
-.search {
+
+button {
+  border-radius: 10px;
+  background-color: #e3ddc9;
+  margin: 0.5rem;
+  padding: 0.3rem;
+}
+
+.user-status {
+  top: 80px;
+  text-align: center;
+  background-color: #a39b8b;
+  grid-column: 1/ -1;
   grid-row: 2;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
+}
+
+.logout:not(.in) {
+  display: none;
+}
+
+.in {
+  height: 30px;
+  width: 120px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.myMessages:not(.in) {
+  display: none;
+}
+.myPosts:not(.in) {
+  display: none;
+}
+
+.site-name {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  color: rgb(78, 75, 75);
+  font-size: 30px;
 }
 
 .search-bar {
-  border: black solid 1px;
-  padding: 0.5rem;
-  width: 80%;
-  margin-right: 0.5rem;
+  position: fixed;
+  width: auto;
+  top: 70px;
+  left: auto;
 }
 
-.search-button {
-  border: black solid 1px;
+#post-search {
+  border: solid black 1px;
+  height: 35px;
+  margin: 0.5rem;
   padding: 0.5rem;
-  width: 10%;
 }
-.all-posts {
+
+.post-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+.posts-header {
+  display: block;
+  text-align: center;
+  color: rgb(10, 2, 58);
+  background-color: rgb(248, 218, 242);
+  height: 30px;
+  padding-top: 5px;
+}
+.full-width {
+  grid-column: 1/4;
+}
+
+main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 50rem;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  grid-column: 2/3;
 }
-.post{
-  border: 1px solid black;
+
+.post:not(.in) {
+  display: none;
+}
+
+aside {
+  width: auto;
   padding: 1rem;
   margin: 1rem;
-}
-.post .title {
-  font-size: 20px;
+  margin-right: 1rem;
+  float: right;
+  box-shadow: 10px 5px 5px #90b3b6;
+  font-style: italic;
+  color: #29627e;
+  border: black 1px solid;
 }
 
-.login-bar {
-  grid-row: 1;
-  padding: 2rem;
-  text-align: right;
-  background-color: #9cd3b9;
+.make-post-head {
+  display: grid;
+  grid-column: 3/4;
+  text-align: center;
+  background-color: #a39b8b;
+  height: 30px;
+  font-size: 20px;
+  color: rgb(243, 242, 241);
+  margin-top: 2px;
+}
+
+#post-body {
+  height: 200px;
+  width: 350px;
+  margin: 0px 0px 10px 25px;
+  border: 1px solid rgb(170, 166, 166);
+  border-radius: 7px;
+}
+
+#post-title,
+#post-price,
+#post-location {
+  width: 350px;
+  height: 25px;
+  border: 1px solid rgb(170, 166, 166);
+  margin: 0px 0px 10px 25px;
+  border-radius: 6px;
+}
+
+#willDeliver {
+  height: 20px;
+  width: 20px;
+  margin-left: 10px;
+  border: 1px solid rgb(170, 166, 166);
+  border-radius: 6px;
+}
+
+label {
+  padding-left: 22px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+input {
+  border: solid black 1px;
+}
+
+#submit-post {
+  border: none;
+  border-radius: 6px;
+  background-color: #e3ddc9;
+  text-align: center;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-weight: 700;
+}
+
+.modal:not(.open) {
+  display: none;
+}
+
+.modal.open {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(6px);
+}
+
+.modal .content {
+  width: 400px;
+  padding: 12px;
+  min-height: 200px;
+  background: #a39b8b;
+  box-shadow: 0 2px 12px -8px black;
+}
+
+.modal h3 {
+  font-size: 18px;
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #888;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal label {
+  margin: 12px 0 4px 0px;
+  text-align: left;
+  font-size: 15px;
+  padding-left: 0;
+}
+
+.modal input,
+.modal textarea {
+  background: rgb(255, 251, 251);
+  padding: 8px;
+  font-size: 22px;
+}
+
+.modal .actions {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.modal .action {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px -2px black;
+  cursor: pointer;
+}
+
+.modal .action.when-invalid {
+  background: #777;
+}
+
+.modal .action:not(.when-invalid):hover {
+  background: white;
+}
+
+.modal .action:not(:first-of-type) {
+  margin-left: 12px;
+}
+
+.modal .action span {
+  margin-left: 6px;
+  font-weight: bold;
+  letter-spacing: 1.1;
+  text-transform: uppercase;
+}
+
+.modal input:invalid:required {
+  border-bottom: 3px solid rgb(250, 80, 80);
+}
+
+.modal input:valid:required + h5 {
+  display: none;
+}
+
+.modalLogin:not(.open) {
+  display: none;
+}
+
+.modalLogin.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(6px);
+}
+.modalLogin .contentLogin {
+  font-family: "Noto Sans", sans-serif;
+  width: 400px;
+  padding: 12px;
+  min-height: 200px;
+  background: #a39b8b;
+  box-shadow: 0 2px 12px -8px black;
+}
+
+.modalLogin h3 {
+  font-size: 18px;
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #888;
+}
+
+.modalLogin form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalLogin label {
+  margin: 12px 0 4px 0px;
+  text-align: left;
+  font-size: 15px;
+  padding-left: 0;
+}
+
+.modalLogin input,
+.modalLogin textarea {
+  background: rgb(250, 248, 248);
+  padding: 8px;
+  font-size: 22px;
+}
+
+.modalLogin .actions {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.modalLogin .action {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px -2px black;
+  cursor: pointer;
+}
+
+.modalLogin .action.when-invalid {
+  background: #777;
+}
+
+.modalLogin .action:not(.when-invalid):hover {
+  background: white;
+}
+
+.modalLogin .action:not(:first-of-type) {
+  margin-left: 12px;
+}
+
+.modalLogin .action span {
+  margin-left: 6px;
+  font-weight: bold;
+  letter-spacing: 1.1;
+  text-transform: uppercase;
+}
+
+.modalLogin input:invalid:required {
+  border-bottom: 3px solid rgb(250, 80, 80);
+}
+
+.modalLogin input:valid:required + h5 {
+  display: none;
 }
 
 .login {
-  padding: 1rem;
-  margin-right: 1rem;
-  border: black solid 1px;
+  display: none;
+}
+.visible {
+  display: inline-block;
+}
+.invisible {
+  display: none;
 }
 
-.logout {
-  padding: 1rem;
-  margin-right: 1rem;
-  border: black solid 1px;
+.pop-up {
+  display: grid;
+  grid-column: 2/3;
+}
+.post-tab {
+  display: inline-flexbox;
+  border: 1px solid grey;
+  min-height: 400px;
+  width: 350px;
+  margin: 15px 5px 5px;
+}
+.post-tab p {
+  margin: 10px 5px 0px 5px;
+  font-size: 18px;
+}
+.post-tab h2 {
+  margin: 5px;
+  color: rgb(29, 19, 122);
+  text-align: center;
 }
 
-.site-nav {
-  padding: 1rem;
-  margin-right: 1rem;
-  border: black solid 1px;
+.post-holder {
+  overflow: scroll;
+  height: 100vh;
+}
+.edit-post {
+  height: 40px;
+  width: 80px;
+  background-color: #e3ddc9;
+  margin-left: 10px;
+  margin-top: 50px;
+  font-weight: 700;
+}
+.delete-post {
+  height: 40px;
+  width: 80px;
+  background-color: #e3ddc9;
+  margin-left: 10px;
+  margin-top: 50px;
+  font-weight: 700;
+}
+.view-messages {
+  height: 40px;
+  width: 80px;
+  background-color: #e3ddc9;
+  margin-left: 10px;
+  margin-top: 50px;
+  font-weight: 700;
+}
+.send-message {
+  height: 40px;
+  width: 80px;
+  background-color: #e3ddc9;
+  margin-left: 10px;
+  margin-top: 50px;
+  font-weight: 700;
 }
 
-#heading {
+.messageForm {
+  display: flex;
+}
+
+#messageBody {
+  float: left;
+  border: 1px solid rgb(50, 61, 61);
+  height: 80px;
+  width: 250px;
+  margin: 5px;
+}
+.messageButton {
+  margin-top: 55px;
+  background-color: #e3ddc9;
+  font-weight: 600;
+  height: 30px;
+  width: 60px;
+}
+.messagesHeader {
+  background-color: yellow;
+  height: 40px;
   font-size: 20px;
-  padding: 0.2rem;
-  margin: 0.2rem;
+  font-weight: 700;
+  text-align: center;
 }
-#error_message {
-  padding: 0.2rem;
-  margin: 0.2rem;
+.message-container:not(.messageUp) {
+  display: none;
+  width: 100%;
+  height: 100%;
 }
-
-#login-submit-button, #logout {
-  padding: 0.2rem;
-  border: black solid 1px;
-  margin: 0.2rem;
+.messageUp {
+  grid-column: 1/2;
+  position: fixed;
+  top: 100px;
 }
-
-#username, #password {
-  padding: 0.2rem;
-  border: black solid 1px;
-  margin: 0.2rem;
-  height: 2.5rem;
+.postMiddle {
+  display: grid;
+  grid-column: 2/3;
 }
 
-#register_button, #login_button {
-  padding: 0.2rem;
-  border: black solid 1px;
-  margin: 0.5rem;
-  margin-right: 0.2rem;
-  /* background-color: ; */
+.message-tab {
+  min-height: 100px;
+  min-width: 200px;
+  background-color: #a39b8b;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 6px;
+}
+.message-tab p {
+  margin: 10px 0px;
+}
+.message-holder {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 100vh;
 }
 
-#register_button, #login_button, #login-submit-button, #logout {
-  height: 2.5rem;
-  width: 5rem;
+@media screen and (max-width: 900px) {
+  .post-form {
+    display: none;
+  }
 }
 
-#options {
-  background-color: #536b60;
-}
-.post_cards, .messages, .post_create {
-  padding: 0.5rem;
-  margin: 0.5rem;
-  background-color: #536b60;
-}
-
-.new-messages {
-  background-color: rgb(210, 213, 216);
-  padding: 0.5rem;
-}
-
-.new-messages .title {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-.new-messages .message {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-
-.new-messages button {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-
-.new-post {
-  background-color: lightsteelblue;
-  padding: 0.5rem;
-}
-
-.new-post-title {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-.new-post-description {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-.new-post-price {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-.new-post-location {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-.new-post-will_deliver {
-  margin: 0.5rem;
-  padding: 0.3rem;
-}
-.new-post-button {
-  margin: 0.5rem;
-  padding: 0.3rem;
+@media screen and (max-width: 600px) {
+  .post-form {
+    display: none;
+  }
 }
